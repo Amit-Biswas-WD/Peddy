@@ -17,13 +17,14 @@
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
       body {
         font-family: "Lato", sans-serif;
       }
     </style>
   </head>
-  <body>
+  <body class="container mx-auto">
     <nav>
       <div class="navbar bg-base-100">
         <div class="navbar-start">
@@ -46,25 +47,31 @@
             </div>
             <ul
               tabindex="0"
-              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-[#131313] text-[16px] font-normal"
             >
-              <li><a>Item 1</a></li>
-              <li>
-                <a>Parent</a>
-                <ul class="p-2">
-                  <li><a>Submenu 1</a></li>
-                  <li><a>Submenu 2</a></li>
-                </ul>
-              </li>
-              <li><a>Item 3</a></li>
+              <li>Home</li>
+              <li>Stop</li>
+              <li>Contact</li>
             </ul>
           </div>
-          <a class="btn btn-ghost text-xl">Peddy</a>
+          <div class="flex items-center text-center gap-[12px]">
+            <img
+              class="w-[28px] h-[24px]"
+              src="https://i.ibb.co/BNXVC1n/logo.webp"
+              alt="photo"
+            />
+            <p class="text-[#131313] text-[32px] font-black w-[93px] h-[38px]">
+              Peddy
+            </p>
+          </div>
         </div>
         <div class="navbar-center hidden lg:flex">
-          <ul class="menu menu-horizontal px-1">
-            <li><a>Item 1</a></li>
-            <li><a>Item 3</a></li>
+          <ul
+            class="menu menu-horizontal px-1 gap-[32px] text-[#131313] text-[16px] font-normal"
+          >
+            <li>Home</li>
+            <li>Stop</li>
+            <li>Contact</li>
           </ul>
         </div>
         <div class="navbar-end">
