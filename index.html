@@ -24,12 +24,61 @@
       }
     </style>
   </head>
-  <body class="container mx-auto">
-    <nav>
-      <div class="navbar bg-base-100">
-        <div class="navbar-start">
-          <div class="dropdown">
-            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+  <body>
+    <div class="container mx-auto">
+      <nav>
+        <div class="navbar bg-base-100">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-[#131313] text-[16px] font-normal"
+              >
+                <li>Home</li>
+                <li>Stop</li>
+                <li>Contact</li>
+              </ul>
+            </div>
+            <div class="flex items-center text-center gap-[12px]">
+              <img
+                class="w-[28px] h-[24px]"
+                src="https://i.ibb.co/BNXVC1n/logo.webp"
+                alt="photo"
+              />
+              <p
+                class="text-[#131313] text-[32px] font-black w-[93px] h-[38px]"
+              >
+                Peddy
+              </p>
+            </div>
+          </div>
+          <div class="navbar-center hidden lg:flex">
+            <ul
+              class="menu menu-horizontal px-1 gap-[32px] text-[#131313] text-[16px] font-normal"
+            >
+              <li>Home</li>
+              <li>Stop</li>
+              <li>Contact</li>
+            </ul>
+          </div>
+          <div class="navbar-end">
+            <button class="btn btn-ghost btn-circle">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-5 w-5"
@@ -41,111 +90,68 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                 />
               </svg>
-            </div>
-            <ul
-              tabindex="0"
-              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-[#131313] text-[16px] font-normal"
-            >
-              <li>Home</li>
-              <li>Stop</li>
-              <li>Contact</li>
-            </ul>
-          </div>
-          <div class="flex items-center text-center gap-[12px]">
-            <img
-              class="w-[28px] h-[24px]"
-              src="https://i.ibb.co/BNXVC1n/logo.webp"
-              alt="photo"
-            />
-            <p class="text-[#131313] text-[32px] font-black w-[93px] h-[38px]">
-              Peddy
-            </p>
+            </button>
           </div>
         </div>
-        <div class="navbar-center hidden lg:flex">
-          <ul
-            class="menu menu-horizontal px-1 gap-[32px] text-[#131313] text-[16px] font-normal"
+      </nav>
+      <!-- Banner Section Start -->
+      <section class="mt-[48px]">
+        <div class="text-center">
+          <p class="text-[#13131399]">Bringing Families Together ❤️‍🔥</p>
+          <h2 class="text-[72px] font-black text-[#131313]">
+            Your Path to Adoption <br />
+            Starts Here
+          </h2>
+          <p class="text-[#131313] text-[16px] font-normal leading-6">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking <br />
+            at its layout. The point of using Lorem Ipsum is that it has a.
+          </p>
+          <button
+            class="bg-[#0E7A81] text-[20px] font-normal text-white px-[32px] py-[16px] rounded-xl mt-[32px]"
           >
-            <li>Home</li>
-            <li>Stop</li>
-            <li>Contact</li>
-          </ul>
-        </div>
-        <div class="navbar-end">
-          <button class="btn btn-ghost btn-circle">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
+            View More
           </button>
         </div>
-      </div>
-    </nav>
-    <!-- Banner Section Start -->
-    <section class="mt-[48px]">
-      <div class="text-center">
-        <p class="text-[#13131399]">Bringing Families Together ❤️‍🔥</p>
-        <h2 class="text-[72px] font-black text-[#131313]">
-          Your Path to Adoption <br />
-          Starts Here
-        </h2>
-        <p class="text-[#131313] text-[16px] font-normal leading-6">
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking <br />
-          at its layout. The point of using Lorem Ipsum is that it has a.
-        </p>
-        <button
-          class="bg-[#0E7A81] text-[20px] font-normal text-white px-[32px] py-[16px] rounded-xl mt-[32px]"
-        >
-          View More
-        </button>
-      </div>
-      <div class="flex justify-center text-center mt-[42px]">
-        <img src="https://i.ibb.co.com/VVZFBnN/pet.webp" alt="banner" />
-      </div>
-    </section>
-    <!-- Banner Section End -->
+        <div class="flex justify-center text-center mt-[42px]">
+          <img src="https://i.ibb.co.com/VVZFBnN/pet.webp" alt="banner" />
+        </div>
+      </section>
+      <!-- Banner Section End -->
 
-    <!-- Adopt  Your  Best Friend Start -->
-    <section>
-      <div>
-        <div class="text-center">
-          <h2 class="text-[#131313] text-[40px] font-black">
-            Adopt Your Best Friend
-          </h2>
-          <p
-            class="text-[16px] font-normal leading-6 text-[#131313B3] mt-[24px] mb-[48px]"
-          >
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page <br />
-            when looking at its layout. The point of using Lorem Ipsum is that
-            it has a.
-          </p>
-        </div>
+      <!-- Adopt  Your  Best Friend Start -->
+      <section>
         <div>
-          <div></div>
-          <div><h2>Dogs</h2></div>
+          <div class="text-center">
+            <h2 class="text-[#131313] text-[40px] font-black">
+              Adopt Your Best Friend
+            </h2>
+            <p
+              class="text-[16px] font-normal leading-6 text-[#131313B3] mt-[24px] mb-[48px]"
+            >
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page <br />
+              when looking at its layout. The point of using Lorem Ipsum is that
+              it has a.
+            </p>
+          </div>
+          <div>
+            <div
+              id="display-categories"
+              class="py-3 flex gap-5 justify-center"
+            ></div>
+          </div>
         </div>
-      </div>
-    </section>
-    <!-- Adopt  Your  Best Friend End -->
+      </section>
+      <!-- Adopt  Your  Best Friend End -->
+    </div>
 
     <!-- Footer Section Start -->
-    <section>
-      <footer class="footer bg-[#131313] text-[#fff] p-10">
+    <section class="bg-[#131313]">
+      <footer class="footer text-[#fff] p-10 container mx-auto">
         <nav class="text-[16px] font-normal leading-8 text-[#FFFFFFE6]">
           <div class="flex gap-4">
             <img
@@ -173,7 +179,7 @@
           <a class="">Animals</a>
           <a class="">Contact</a>
         </nav>
-        <nav>
+        <nav class="pl-20">
           <h6 class="text-[18px] font-[700px] mb-[32px]">Drop a Message</h6>
           <input
             class="w-[240px] h-[49px] rounded-xl text-center bg-[#ffffff0D] mb-[16px]"
