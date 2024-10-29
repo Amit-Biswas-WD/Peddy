@@ -38,7 +38,41 @@ const cardCategory = (dogs) => {
       alt="Shoes"
       class="rounded-xl h-full w-full object-cover" />
   </figure>
-  <div class="">
+  <div class="p-4">
+  <div>
+  <h2 class="py-2 text-xl font-bold">${item.pet_name}</h2>
+  <div class="flex gap-2 items-center"><img
+      src="/image/windows.png"
+      alt="Shoes"
+      class="w-4 h-4" />
+      <p>Breed: ${item.breed}</p>
+  </div>
+  <div class="flex gap-2 items-center py-2"><img
+      src="/image/readio.png"
+      alt="Shoes"
+      class="w-4 h-4" />
+      <p>Birth: ${item.date_of_birth}</p>
+  </div>
+  <div class="flex gap-2 items-center"><img
+      src="/image/plus.png"
+      alt="Shoes"
+      class="w-4 h-4" />
+      <p>Gender: ${item.gender}</p>
+  </div>
+  <div class="flex gap-2 items-center py-2"><img
+      src="/image/dolar.png"
+      alt="Shoes"
+      class="w-4 h-4" />
+      <p>Price: ${item.price}</p>
+  </div>
+  <div class="flex justify-between gap-2 items-center py-2">
+  <button class="btn btn-outline btn-accent"><img
+      src="/image/like.png"
+      alt="Shoes"
+      class="w-4 h-4" /></button>
+  <button class="btn btn-outline btn-accent">Adopt</button>
+  <button class="btn btn-outline btn-accent">Details</button>
+  </div>
   </div>`;
     cardContainer.append(card);
   });
