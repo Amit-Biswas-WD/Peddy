@@ -5,6 +5,13 @@ const loadCategory = () => {
     .catch((error) => console.log(error));
 };
 
+const loadCard = () => {
+  fetch("https://openapi.programming-hero.com/api/peddy/category/dog")
+    .then((res) => res.json())
+    .then((data) => console.log(data.data))
+    .catch((error) => console.log(error));
+};
+
 const displayCategory = (category) => {
   const categoryContainer = document.getElementById("display-categories");
   category.forEach((item) => {
@@ -21,4 +28,5 @@ const displayCategory = (category) => {
   });
 };
 
+loadCard();
 loadCategory();
