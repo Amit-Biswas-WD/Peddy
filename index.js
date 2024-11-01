@@ -12,6 +12,14 @@ const loadCard = () => {
     .catch((error) => console.log(error));
 };
 
+const phoneDetails = (petId) => {
+  // console.log(petId);
+  fetch(`https://openapi.programming-hero.com/api/peddy/pet/${petId}`)
+    .then((res) => res.json())
+    .then((data) => console.log(data.petData))
+    .catch((error) => console.log(error));
+};
+
 const loadCategoryCard = (category) => {
   // alert(category);
   fetch(`https://openapi.programming-hero.com/api/peddy/category/${category}`)
