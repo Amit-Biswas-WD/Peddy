@@ -91,6 +91,15 @@ const phoneDetails = async (petId) => {
   my_modal_1.showModal();
 };
 
+const removeActiveBtn = () => {
+  const buttons = document.getElementsByClassName("btn-className");
+  console.log(buttons);
+
+  for (let btn of buttons) {
+    btn.classList.remove("active");
+  }
+};
+
 const loadCategoryCard = (category) => {
   // alert(category);
   // const res = await fetch(
@@ -101,7 +110,14 @@ const loadCategoryCard = (category) => {
 
   fetch(`https://openapi.programming-hero.com/api/peddy/category/${category}`)
     .then((res) => res.json())
-    .then((data) => cardCategory(data.data))
+    .then((data) => {
+      removeActiveBtn();
+
+      const activeBtn = document.getElementById(`btn-${category}`);
+      // console.log("ActiveBtn", activeBtn);
+      activeBtn.classList.add("active");
+      cardCategory(data.data);
+    })
     .catch((error) => console.log(error));
 };
 
@@ -178,9 +194,9 @@ const displayCategory = (category) => {
   category.forEach((item) => {
     console.log(item);
     const buttonContainer = document.createElement("div");
-    buttonContainer.innerHTML = `<button 
+    buttonContainer.innerHTML = `<button id="btn-${item.category}"
     onclick="loadCategoryCard('${item.category}')"
-     id="${item.id}" class="btn btn-outline btn-accent w-60 h-16 gap-8"><img id="${item.category}"
+     id="${item.id}" class="btn btn-outline btn-accent w-60 h-16 gap-8 btn-className"><img id="${item.category}"
       src=${item.category_icon}
       class="w-10"
       alt="Shoes" />${item.category}</button>`;
