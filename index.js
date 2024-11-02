@@ -12,12 +12,84 @@ const loadCard = () => {
     .catch((error) => console.log(error));
 };
 
-const phoneDetails = (petId) => {
+const phoneDetails = async (petId) => {
   // console.log(petId);
-  fetch(`https://openapi.programming-hero.com/api/peddy/pet/${petId}`)
-    .then((res) => res.json())
-    .then((data) => console.log(data.petData))
-    .catch((error) => console.log(error));
+  const res = await fetch(
+    `https://openapi.programming-hero.com/api/peddy/pet/${petId}`
+  );
+  const data = await res.json();
+  console.log(data.petData);
+
+  const {
+    breed,
+    category,
+    date_of_birth,
+    price,
+    image,
+    gender,
+    pet_details,
+    vaccinated_status,
+    pet_name,
+  } = data?.petData;
+
+  const modalContainer = document.getElementById("modal-container");
+  const div = document.createElement("div");
+  modalContainer.innerHTML = `
+  <dialog id="my_modal_1" class="modal" aria-label="Pet Details">
+  <div class="modal-box">
+    <img src="${image}" alt="${pet_name} picture" class="rounded-xl h-full w-full object-cover" />
+
+    <div">
+    <h2 class="text-lg font-semibold my-4">${pet_name}</h2>
+    <div class="flex gap-4 items-center">
+
+      <div>
+        <div class="flex gap-2 items-center py-2">
+          <img src="/image/readio.png" alt="Breed icon" class="w-4 h-4" />
+          <p>Breed: ${breed}</p>
+        </div>
+        <div class="flex gap-2 items-center">
+          <img src="/image/plus.png" alt="Gender icon" class="w-4 h-4" />
+          <p>Gender: ${gender}</p>
+        </div>
+        <div class="flex gap-2 items-center">
+          <img src="/image/plus.png" alt="Vaccination status icon" class="w-4 h-4" />
+          <p>Vaccinated Status: ${vaccinated_status}</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex gap-2 items-center py-2">
+          <img src="/image/readio.png" alt="Birth icon" class="w-4 h-4" />
+          <p>Birth: ${date_of_birth}</p>
+        </div>
+        <div class="flex gap-2 items-center py-2">
+          <img src="/image/dolar.png" alt="Price icon" class="w-4 h-4" />
+          <p>Price: ${price}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="my-4">
+    <p class="my-4 text-lg font-semibold">Details Information</p>
+    <p>${pet_details}</p>
+    </div>
+
+    <div class="modal-action">
+      <form class="w-full" method="dialog">
+        <button class="btn btn-outline btn-accent w-full">Close</button>
+      </form>
+    </div>
+
+  </div>
+  </div>
+
+</dialog>
+
+  `;
+  modalContainer.appendChild(div);
+
+  my_modal_1.showModal();
 };
 
 const loadCategoryCard = (category) => {
@@ -27,8 +99,6 @@ const loadCategoryCard = (category) => {
     .then((data) => console.log(data.data))
     .catch((error) => console.log(error));
 };
-
-const cardDetails = () => {};
 
 const cardCategory = (pets) => {
   const cardContainer = document.getElementById("card");
