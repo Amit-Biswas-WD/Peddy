@@ -22,7 +22,6 @@ const phoneDetails = async (petId) => {
 
   const {
     breed,
-    category,
     date_of_birth,
     price,
     image,
@@ -94,14 +93,35 @@ const phoneDetails = async (petId) => {
 
 const loadCategoryCard = (category) => {
   // alert(category);
+  // const res = await fetch(
+  //   `https://openapi.programming-hero.com/api/peddy/category/${category}`
+  // );
+  // const data = await res.json();
+  // displayCategory(data.data);
+
   fetch(`https://openapi.programming-hero.com/api/peddy/category/${category}`)
     .then((res) => res.json())
-    .then((data) => console.log(data.data))
+    .then((data) => cardCategory(data.data))
     .catch((error) => console.log(error));
 };
 
 const cardCategory = (pets) => {
   const cardContainer = document.getElementById("card");
+  cardContainer.innerHTML = "";
+
+  if (pets.length == 0) {
+    cardContainer.classList.remove("grid");
+    cardContainer.innerHTML = `<div class="min-h-[300px] object-cover flex flex-col gap-5 justify-center items-center ">
+    <img
+      src='image/Icon.png'
+      class=""
+      alt="Shoes" />
+      <h2 class="text-center text-xl font-bold">Oops! Sorry, There is on Content here.</h2> </div> `;
+    return;
+  } else {
+    cardContainer.classList.add("grid");
+  }
+
   pets.forEach((item) => {
     console.log(item);
     const card = document.createElement("div");
@@ -158,15 +178,12 @@ const displayCategory = (category) => {
   category.forEach((item) => {
     console.log(item);
     const buttonContainer = document.createElement("div");
-    buttonContainer.innerHTML = `<div>
-    
-    <button 
+    buttonContainer.innerHTML = `<button 
     onclick="loadCategoryCard('${item.category}')"
      id="${item.id}" class="btn btn-outline btn-accent w-60 h-16 gap-8"><img id="${item.category}"
       src=${item.category_icon}
       class="w-10"
-      alt="Shoes" />${item.category}</button>
-    </div>`;
+      alt="Shoes" />${item.category}</button>`;
     categoryContainer.append(buttonContainer);
   });
 };
